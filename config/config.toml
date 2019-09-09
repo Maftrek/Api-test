@@ -1,0 +1,7 @@
+[ServerOpt]
+  ReadTimeout = "10s"
+  WriteTimeout = "10s"
+  IdleTimeout = "10s"
+
+[NatsServer]
+  Address = "0.0.0.0:4222"
