@@ -11,3 +11,16 @@ body (json)
 	"date": "2019-01-01"
 }
 ```
+
+Есть возможность развернуть докер образ, но в этом случае потребуется иметь nats-streaming-server и postgres не локально. Если условие выполняется то адреса nats-streaming-server и postgres необходимо прописать в config/config.toml
+
+[NatsServer]
+  Address = "АДРЕСС NATS"
+
+Для запуска докер образа необходимо выполнить в директории программы:
+
+1) CGO_ENABLED=0 GOOS=linux go build -o main .
+
+2) docker build -t api_test:0.0.1 .
+
+3) docker run api_test:0.0.1
